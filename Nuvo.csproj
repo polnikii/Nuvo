@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <!-- WPF + WinForms together make implicit usings ambiguous (Point, Color, Brushes...) -->
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>Nuvo</AssemblyName>
+    <RootNamespace>Nuvo</RootNamespace>
+    <ApplicationIcon>Assets\Nuvo.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <!-- WinForms asks for ApplicationHighDpiMode; we want the manifest's system-aware mode for WPF -->
+    <NoWarn>$(NoWarn);WFAC010</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Nuvo.ico" />
+    <Resource Include="Fonts\*.ttf" />
+  </ItemGroup>
+
+</Project>
